@@ -1,9 +1,5 @@
-print(11 / 3)
-print('%.2f' % (11/3))
+pi = 3.141592653589793
 
-name = 'Oleg'
-print('hi %s' % name)
-print('{} {}'.format('Hello', 'Hi'))
-print('{film} {author}'.format(film='Hello', author='Hi'))
-name = 'Sergey'
-print(f'Hello {name}')
+print('%.5f' % pi)
+print('%.5d' % pi)
+print('%.5s' % pi)
