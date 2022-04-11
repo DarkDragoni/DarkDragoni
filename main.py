@@ -1,2 +1,6 @@
-print('Film {}, author {} came out {}'.format('Fight Club', 'David Filcher', '1999'))
-print('Film {0} {2}, {1}'.format('Fight Club', 'David Filcher', '1999'))
+nums = [n for n in range(20)]
+print(nums)
+print(nums[2:5])
+name = 'Python is not a snake'
+b = name[7:2:-1]
+print(b)
