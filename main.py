@@ -1,3 +1,4 @@
-a= 2.71828
-b= 3
-print('%.5s' % a)
+# task 4
+word = 'infinity'
+let = (len(word))
+print("%s has %s letters." % (word, let))
