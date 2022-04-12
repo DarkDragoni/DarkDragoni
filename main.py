@@ -1,2 +1,12 @@
-series = ['Game of Thrones', 'Riverdale', 'Shameless', 'Doctor Who', 'Friends']
-print(series[3:5])
+# task 1 slice
+
+def isPalindrome(w):
+    return w == w[::-1]
+ 
+w = "palindrom"
+ans = isPalindrome(w)
+ 
+if ans:
+    print("Yes")
+else:
+    print("No")
