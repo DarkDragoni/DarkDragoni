@@ -1,5 +1,15 @@
-#What will be the output of this code?
+income = int(input())
 
-#print('{0} and {2} met yesterday in {1}.'.format('Angelina Jolie', 'Paris', 'Leonardo DiCaprio'))
-print('the output will be:')
-print('{0} and {2} met yesterday in {1}.'.format('Angelina Jolie', 'Paris', 'Leonardo DiCaprio'))
+if 0 <= income < 15000:
+  income = income = int(input(40000))
+
+if 15000 <= income < 40000:
+  income = income * 0.15
+
+if 40000 <= income < 130000:
+  income = income * 0.25
+
+if 130000 <= income:
+  income = income * 0.28
+
+print(income)
