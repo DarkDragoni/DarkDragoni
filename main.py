@@ -1,15 +1,15 @@
-income = int(input())
+# Linear and Binary Search
+# Big O
+# sorted and unsorted array
 
-if 0 <= income < 15000:
-  income = income = int(input(40000))
+from random import randint
 
-if 15000 <= income < 40000:
-  income = income * 0.15
+lst = [randint(0, 10) for _ in range(10)]
+lst.sort()
+print(lst)
+mx = 0
+for n in lst:
+    if n > mx:
+        mx = n
 
-if 40000 <= income < 130000:
-  income = income * 0.25
-
-if 130000 <= income:
-  income = income * 0.28
-
-print(income)
+print(mx)
