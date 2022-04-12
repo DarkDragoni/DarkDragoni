@@ -1,6 +1,5 @@
-n = 10 
-k = 3
-a1 = (n - k) * (n+k)
-1 <= n <= 10^3
-0 <= k <= n
-print(a1)
+str1 = 'no clouds here to spy on pets'
+str2 = str1[0::5]
+str3 = str2[::-1]
+print('The cypher is {}'.format (str3))
+
