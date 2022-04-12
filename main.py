@@ -1,3 +1,2 @@
-check_list = [n for n in range(101)]
-list = (check_list[::5])
-print(list)
+nums = [0, 1, 1, 2, 3, 5, 8]
+copy = (nums(:))
