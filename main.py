@@ -1,5 +1,8 @@
-str1 = 'no clouds here to spy on pets'
-str2 = str1[0::5]
-str3 = str2[::-1]
-print('The cypher is {}'.format (str3))
-
+n = 51 
+stop_eat = 17
+stop = 13
+a0 = n / stop 
+a1 = n / stop_eat
+a = a0 + a1
+1 <= n <= 10^3
+print('%.d' % a)
