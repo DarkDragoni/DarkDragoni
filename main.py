@@ -12,7 +12,7 @@ try:
 except ZeroDivisionError as err:
   print('0 Error', err)
 except TypeError as error:
-  print('T Error', error.__class__.__name__, e)
+  print('T Error', error.__class__.__name__, error)
 else:
   print('The result is ', result)
 finally:
