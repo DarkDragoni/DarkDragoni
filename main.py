@@ -20,9 +20,10 @@ if randint (1, 2) == 2:
 stock = stock[on_hands * 2 - 1:]
 
 next_one = 'computer' if len(computer) > len(player) else 'player'
-print('stock pieces: {}\n\
-    computer pieces: {}\n\
-      player pieces: {}\n\
-      domino pieces: [{}]\n\
-            status; {}'.\
+print('Stock pieces: {}\n\
+    Computer pieces: {}\n\
+      Player pieces: {}\n\
+      Domino pieces: [{}]\n\
+            Status; {}'.\
             format(stock, computer, player, snake, next_one))
+print('=' *  70)
