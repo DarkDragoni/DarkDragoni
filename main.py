@@ -1,4 +1,4 @@
-n = 14
-1 <= n <= 10^3
-peces = n // 2
-print(peces)
+from string import ascii_letters
+print(ascii_letters)
+
+
