@@ -27,3 +27,32 @@ print('Stock pieces: {}\n\
             Status; {}'.\
             format(stock, computer, player, snake, next_one))
 print('=' *  70)
+
+print('Stock size: {}\n\
+      \n\
+Computer pieces: {}' .format(len(stock), len(computer)))
+
+print('\n' * 2)
+
+print(snake)
+
+print('\n' * 2)
+
+print('Your pieces:')
+if len(computer) < len(player):
+  for i, n in enumerate(player):
+    print(i + 1, n)
+if len(computer) > len(player):
+  for i, n in enumerate(player):
+    print(i + 1, n)
+
+print('\n')
+
+status = next_one
+if status == 'computer':
+  print("Status: Computer is about to make a move. Press Enter to continue...")
+  
+if status == 'player':
+  print("Status: It's your turn to make a move. Enter your command...")
+
+  
