@@ -1,21 +1,12 @@
-# Handling Exceptions
-
-# list
-# https://docs.python.org/3/library/exceptions.html
-
-a = 5
-b = 'five'
-
-
-try:
-  result = a / b
-except ZeroDivisionError as err:
-  print('0 Error', err)
-except TypeError as error:
-  print('T Error', error.__class__.__name__, error)
-else:
-  print('The result is ', result)
-finally:
-  print("Thank you for using the service")
-
-
+#always young
+# 4 task 01
+from string import ascii_lowercase
+from random import choice
+from random import randint
+lst = []
+new_list = []
+for _ in range(randint(1, len(ascii_lowercase))):
+  lst.append(choice(ascii_lowercase))
+for _ in range(randint(1,len('aiueo'))):
+  new_list.append(choice('aiueo'))
+print(new_list)
