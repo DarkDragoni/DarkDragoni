@@ -1,20 +1,11 @@
-# 4 task 03
-from random import randint
-
-
-names = ['Денис', 'Дима1', 'Ваня', 'Дима2', 'Дима3', 'Лёша', 'Вова', 'Вадим', 'Богда', 'Юра', 'Антон', 'Артём', 'Костя']
-names.sort()
-
-math = [randint(25, 50) for _ in range(len(names))]
-eng = [randint(25,50) for _ in range(len(names))]
-phys = [randint(25,50) for _ in range(len(names))]
-
-res = list(map(lambda x, y, z: x + y + z, math, eng, phys))
-
-enroll = []
-
-for names, point in zip(names, res):
-  if point > 100:
-    enroll.append([names, point])
-
-print(enroll)
+nums = [n for n in range(11)]
+inputs = nums
+a = list(map(lambda x: x * 10, inputs))
+b = inputs * 10
+c = [10 * x for x in inputs]
+if a == c:
+  print('a and c perform the same task')
+if a == b:
+  print('a and b perform the same task')
+if b == c:
+  print('b and c perform the same task')
