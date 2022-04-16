@@ -1,40 +1,29 @@
-from time import perf_counter
+my_list = [i for i in range(-10,11)]
+daily_temp_c = [20, 19, 15, 25, 27, 30, 31, 29, 26, 21,
+                19, 25, 27.5, 28, 26, 29.5, 31, 27.5, 26, 29,
+                18, 17.5, 17, 16.5, 19, 20, 25, 26.5, 27, 28,
+                20.5, 19, 25, 27.5, 28, 26, 15, 25, 27, 28]
 
-def get_primes(n):
-  primes = [2, 3]
-  for i in range(5, n + 1):
-    if i % 6 in (1, 5):
-      prime = True
-      for j in range(2, int(i ** 0.5) + 1):
-        if not i % j:
-          prime = False
-          break
-      if prime:
-        primes.append(i)
-  return primes
+def find_positive(my_list):
+   return my_list > 0
 
+positive = list(filter(find_positive, my_list))
+  
 
-n = 100_000
-start = perf_counter()
-primes = get_primes(n)
-print(perf_counter() - start)
-print(primes)
+print(positive)
+        
+def celsius_to_fahrenheit(daily_temp_c):
+   return (daily_temp_c * 9 / 5) + 32
+
+fahrenheit = list(map(celsius_to_fahrenheit, daily_temp_c))
 
 
-def get_prime_divs(n):
-  res = []
-  for i in range(2, int(n ** 0.5) + 1):
-    while not n % i:
-      if not i in res:
-        res.append(i)
-      n //= i
-    if n < i:
-      break
-  if n > 1:
-     res.append(n)
-  return res
+def temp_above_80 (fahreinheit):
+  return fahreinheit < 80
 
-n = 999_999_999
-start = perf_counter()
-print(get_prime_divs(n))
-print(perf_counter() - start)
+days = list(filter(temp_above_80, fahrenheit))
+
+
+
+for i, name in enumerate(days, start=1):
+  print(i, name)
