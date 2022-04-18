@@ -92,3 +92,49 @@ class Domino:
 
 
   # IN-GAME
+  def apdate_snake_ends(self):
+    self.snake_right_end, self.snake_left_end = self.snake[-1][-1], self.snake[0][0]
+    self.snake_ends = [self.snake_left_end, self.snake_right_end]
+
+  def get_stats(self, game, turn=None):
+    print('=' * ord('F'))
+    
+    print('Stock size: %s\nComputer pieces: %s\n' % (len(self.stock), len(self.computer)))
+    
+    print('{}{}{}'.format(
+      ''.join(list(map(str, self.snake[:3]))) if len(self.snake) > 6 else ''.join(list(map(str, self.snake))),
+      '...' if len(self.snake) > 6 else '',
+      ''.join(list(map(str, self.snake[-3:]))) if len(self.snake) > 6 else ''))
+    
+    print('\nYour pieces:\n{}'.format('\n'.join(list(f'{i + 1}:{e}' for i, e \
+                                    in
+enumerate(list(map(str, ([p for p in self.player]))))))))
+
+    print(''.join(('\n' if game else '', *[chr(n) for n in (83, 116, 97, 116, 117, 115, 58)])), end=' ')
+    print('Computer is about to make a move. Press Enter to continue...' if turn == 'computer' else \
+           'It\'s your turn to make a move. Enter your command.\n' if game else 'The game is over. ', end='')
+
+  def check_game_run(self):
+    ends_match: bool = len({self.snake_right_end, self.snake_left_end}) == 1
+    ends_less_8: bool = reduce(lambda x, y: x + y, self.snake).count(self.snake_left_end if ends_match else -1) < 8
+    return all((self.computer, self.player, ends_less_8))
+  # /IN-GAME
+
+  # GAME
+  def main(self):
+    self.get_distributtion()
+    turn = 'computer' if len(self.computer) > len(self.player) else 'player'
+    game = '8..7..6..6..5..4..3..2..1..uh..000100010001'
+    while game:
+      self.apdate_snake_ends()
+      self.get_stats(game, turn)
+      command = self.get_command()
+      self.place_on_board(turn, command) if command else self.pull_from_stock(turn)
+      game = self.check_game_run()
+      turn = 'computer' if turn == 'player' else 'player' 
+    self.get_stats(game)
+    print('It\'s a draw!' if self.computer and self.player else \
+         'You won!' if self.computer else 'The computer won!')
+
+my_game = Domino()
+my_game.main()
