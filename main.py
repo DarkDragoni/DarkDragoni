@@ -1,39 +1,9 @@
-# DAY 7
+my_dict = {
+  1: 'a',
+  2: 'b'
+}
 
-# -> Two Pointer in Python
-# -> Binary Tasks
-# -> Default Dict and Counter
+print(my_dict.items())
 
-
-# text = 'I\'ve become so numb \
-# I can\'t feel you there \
-# Become so tired \
-# So much more aware'
-
-
-lst = [1, 3, 6, 8, 9, 12, 13, 19]
-num = 0
-k = 1
-for i in range(len(lst)):
-  for j in range(i, len(lst)):
-    if lst[j] - lst[i] >= 3:
-      num += 1
-      print(lst[i], lst[j])
-      k += 1
-
-print(num, k)
-
-
-i = j = 0
-num = 0
-k = 1
-while i < len(lst) and j < len(lst):
-  if lst[j] - lst[i] < 3:
-    j += 1
-  else:
-    num += len(lst) - j
-    i += 1
-  k += 1
-print(num, k)
-    
-    
+rev_dict = {v: k for k, v in my_dict.items()}
+print(rev_dict)
