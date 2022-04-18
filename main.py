@@ -1,9 +1,14 @@
-my_dict = {
-  1: 'a',
-  2: 'b'
+stock = [[2, 1], [2, 3]]
+
+weights = {
+  0: 7,
+  1: 8
 }
 
-print(my_dict.items())
+max_value = max(weights.values())
+print(max_value)
 
-rev_dict = {v: k for k, v in my_dict.items()}
-print(rev_dict)
+rev_weights = {v: k for k, v in weights.items()}
+
+max_key = stock[rev_weights[max_value]]
+print(max_key)
