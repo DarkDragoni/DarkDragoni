@@ -1,3 +1,9 @@
-# ZeroDivisionError -> print(7 - 7 / 0 + 1)
-# ValueError -> int('twenty')
-# TypeError -> len(42)
+
+first = input('Введи число:')
+second = input('Введи число:')
+if first > second:
+  print("Первый победил")
+elif second > first:
+  print("Победил второй")
+else:
+  print('Draw')
