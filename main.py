@@ -1,5 +1,3 @@
-a = int("5")
-print(a + "5")
-print(a * "5")
-print(ValueError)
-# In line 2
+# ZeroDivisionError -> print(7 - 7 / 0 + 1)
+# ValueError -> int('twenty')
+# TypeError -> len(42)
