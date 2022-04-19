@@ -1,36 +1,18 @@
-#READ
+from time import perf_counter
 
-with open('passwords.txt', 'r', encoding='utf-8') as file:
-  print(file.read(4)) #  read 4 bytes
-  print(file.read())  #  read all/rest of bytes in fileif read before like above
+from math import ceil, sqrt
 
-with open('passwords.txt', 'r', encoding='utf-8') as file:
-  print(file.readline(5)) #  read 5 bytes
-  print(file.readline())  #  read all/rest of bytes in line if read before like above
+def get_all_dividers(num):
 
-with open('passwords.txt', 'r', encoding='utf-8') as file:
-  print(file.readlines()) #  returns list
-  
-with open('passwords.txt', 'r', encoding='utf-8') as file:
-  for line in file:
-    print(line) #  returns line + \n
-    print(line.strip()) #  returns line stripped from \s\n\t etc.
+    first_half_dividers = [x for x in range(1, ceil(sqrt(num)) + 1)
+                           if num % x == 0]
 
+    second_half_dividers = [int(num / x) for x in reversed(first_half_dividers)
+                            if int(num / x) not in first_half_dividers]
 
-#WRITE
-with open('checked.txt', 'w', encoding='utf-8') as file:
-  file.write('new entry - check')
-  file.write('NEW new entry - check')  # re-writes the line above
+    return first_half_dividers + second_half_dividers
 
-with open('checked.txt', 'a', encoding='utf-8') as file:
-  file.write('new entry - check')
-  file.write('NEW new entry - check')  # appends the line to existing contents
-
-checked = ['this', 'that', 'that over there']
-with open('checked.txt', 'w', encoding='utf-8') as file:
-  for check in checked:
-    file.write(check + '\n')  # writes all in the list each on new line
-
-checked = ['this\n', 'that\n', 'that over there\n']
-with open('checked.txt', 'w', encoding='utf-8') as file:
-    file.writelines(checked)  # writes all in the list each on new line
+print(get_all_dividers(1000_000_000)) 
+print(get_all_dividers(10))
+start = perf_counter()
+print(perf_counter() - start)
