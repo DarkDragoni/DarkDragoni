@@ -1,26 +1,4 @@
 from time import perf_counter
-from time import perf_counter
-
-def get_primes(n):
-  primes = [2, 3]
-  for i in range(5, n + 1):
-    if i % 6 in (1, 5):
-      prime = True
-      for j in range(2, int(i ** 0.5) + 1):
-        if not i % j:
-          prime = False
-          break
-      if prime:
-        primes.append(i)
-  return primes
-
-
-n = 10
-start = perf_counter()
-primes = get_primes(n)
-print(primes)
-print(perf_counter() - start)
-
 
 def get_prime_divs(n):
   res = []
@@ -35,7 +13,7 @@ def get_prime_divs(n):
      res.append(n)
   return res
 
-n = 10
+n = 1000_000_000
 start = perf_counter()
 print(get_prime_divs(n))
 print(perf_counter() - start)
