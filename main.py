@@ -13,7 +13,7 @@ def get_prime_divs(n):
      res.append(n)
   return res
 
-n = 1000
+n = 1_000_000_000
 start = perf_counter()
 print(get_prime_divs(n))
 print(perf_counter() - start)
