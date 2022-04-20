@@ -774,6 +774,9 @@ with socket.socket() as client_socket:
 
 import socket
 
+
+
+
 # 2 Вариант
 with socket.socket() as client_socket:
 
@@ -793,3 +796,59 @@ with socket.socket() as client_socket:
   response = response.decode()  # converting back to rea
 
   print(response)
+
+
+
+# Разложение стока
+from functools import reduce
+from collections import Counter
+
+
+stock = [[0, 6], [3, 4], [1, 4], [4, 5], [3, 5], [1, 2], [1, 3], [0, 1], [5, 6], [6, 6], [0, 4], [1, 1], [2, 3], [0, 3], [3, 3], [2, 4], [1, 5], [2, 6], [3, 6], [0, 2], [4, 4]]
+
+
+new_stock = reduce(lambda x, y: x + y, stock)
+print(new_stock)
+
+
+new_new_stock = [item for sublist in stock for item in sublist]
+print(new_new_stock)
+
+
+
+# generators
+
+def multiples(a, n):
+  i = 1
+  result = []
+  while i <= n:
+    result.append(a * i)
+    i += 1
+  return result  # list
+
+
+print(multiples(3, 5))  # gives whole list
+print(multiples(2, 10))  # # gives whole list
+
+
+def multiples(a, n):
+  i = 1
+  while i <= n:
+    yield a * i  # yield is used instead of return to make results one by one
+    i += 1
+
+my_gen = multiples(3, 5)  # generator object
+print(next(my_gen))  # gives 1st result
+print(next(my_gen))  # gives 2nd result
+print(next(my_gen))  # gives 3d result
+
+
+numbers = [1, 2, 3]
+my_generator = (n ** 2 for n in numbers)  # generator object
+print(next(my_generator))  # gives 1st result
+print(next(my_generator))  # gives 2nd result
+print(next(my_generator))  # gives 3d result
+print(next(my_generator))  # StopIteration Exception
+
+for n in my_generator:  # can be used with for loop 
+  print(n)
