@@ -1,8 +1,13 @@
-#try: 
-#    1/0 
-#except: 
-#    1/0 
-#finally: 
-#    print("It's OK.")
+#8 task 04
 
-print('ZeroDivissionError will be printed 2 times')
+def den():
+    try:
+        a = int(input("Enter number: "))
+        b = int(input("Enter number: "))
+        z = a/b
+    except ZeroDivisionError:
+        print ("The Error!")
+        den()
+    else:
+        print (z)
+den()      
