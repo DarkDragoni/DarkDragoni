@@ -1,18 +1,13 @@
-from time import perf_counter
+def enter_name():
+  try:
+      name, surname = input('Введите фамилию и имя:').split()
+     
+          
+  except ValueError:
+      print('You need to enter exactly 2 words. Try again!')
+      enter_name()
+      
+  else:
+      print('Welcome to our party,', name, surname)
+enter_name()
 
-from math import ceil, sqrt
-
-def get_all_dividers(num):
-
-    first_half_dividers = [x for x in range(1, ceil(sqrt(num)) + 1)
-                           if num % x == 0]
-
-    second_half_dividers = [int(num / x) for x in reversed(first_half_dividers)
-                            if int(num / x) not in first_half_dividers]
-
-    return first_half_dividers + second_half_dividers
-
-print(get_all_dividers(1000_000_000)) 
-print(get_all_dividers(10))
-start = perf_counter()
-print(perf_counter() - start)
