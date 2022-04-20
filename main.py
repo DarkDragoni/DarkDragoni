@@ -1,13 +1,15 @@
-def enter_name():
-  try:
-      name, surname = input('Введите фамилию и имя:').split()
-     
-          
-  except ValueError:
-      print('You need to enter exactly 2 words. Try again!')
-      enter_name()
-      
-  else:
-      print('Welcome to our party,', name, surname)
-enter_name()
+class NameError(Exception):
+  pass
 
+try:
+  name = input('Input your name >>').strip()
+  if len(name) < 1:
+    raise NameError
+  else:
+    print("Hello,", name)
+    print("Hello, stranger!")
+    print("What a beautiful name you have!")
+except NameError:
+    print('Error')
+finally:
+    print("Hope to see you soon!")
