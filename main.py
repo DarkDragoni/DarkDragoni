@@ -1,17 +1,20 @@
-class NegativeSumError(Exception):
-  pass
+class NotInBoundsError(Exception):
+  def c_str_dunder(self):
+    return "There is an error!"
 
-def sum_with_exceptions():
+def check_integer():
   try:
-    a = int(input('Enter nums:'))
-    b = int(input('Enter nums:'))
-    c = a + b
-    if int(c) < 0:
-      raise NegativeSumError
+    num = int(input('Enter num from 45 of 67>>'))
+    if 45 < int(num) < 67:
+      print(num)
     else:
-      print(c)
-  except NegativeSumError:
-    print('Sum negetive')
-    sum_with_exceptions()
+      raise NotInBoundsError
+  except NotInBoundsError:
+    print(NotInBoundsError)
+    check_integer()
+
+check_integer()
+
+def error_handling():
+  try:
     
-sum_with_exceptions()
