@@ -1,13 +1,9 @@
-#8 task 04
+print('Programm will display "Exception: Something went wrong!"')
 
-def den():
-    try:
-        a = int(input("Enter number: "))
-        b = int(input("Enter number: "))
-        z = a/b
-    except ZeroDivisionError:
-        print ("The Error!")
-        den()
-    else:
-        print (z)
-den()      
+a = -2
+b = 10
+c = a / b
+if c >= 0:
+    print(c)
+else:
+    raise Exception('Something went wrong!')
